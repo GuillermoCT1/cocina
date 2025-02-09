@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Infinito</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("img/fondo.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .slide {
+            min-width: 300px;
+            height: 400px;
+            background: rgb(226, 212, 212, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            overflow: hidden;
+        }
+        .slide img:hover {
+            object-fit: cover;
+            overflow: hidden;
+            transform: scale(1.2);
+        }
+
+        .slide img {
+            width: 300px;
+            height: 320px;
+            object-fit: cover;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slide a:hover {
+            color:rgb(57, 126, 61);
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 19px;
+        }
+        .slide a{
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .slide div:first-child {
+            width: 300px;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .slide div:last-child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 80px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider">
+
+    </div>
+</div>
+
+<script>
+    const slider = document.querySelector('.slider');
+    const container = document.querySelector('.slider-container');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    const slidesData = [
+        { img: "img/slide1.png", text: "Elemento 1", link: "#" },
+        { img: "img/slide1.png", text: "Elemento 2", link: "#" },
+        { img: "img/slide1.png", text: "Elemento 3", link: "#" },
+        { img: "img/slide1.png", text: "Elemento 4", link: "#" },
+        { img: "img/slide1.png", text: "Elemento 5", link: "#" },
+        { img: "img/slide1.png", text: "Elemento 6", link: "#" },
+        { img: "img/slide1.png", text: "Elemento 7", link: "#" },
+        { img: "img/slide1.png", text: "Elemento 8", link: "#" },
+        { img: "img/slide1.png", text: "Elemento 9", link: "#" },
+        { img: "img/slide1.png", text: "Elemento 10", link: "#" }
+    ];
+
+    function createSlide(item) {
+        const slidePADRE = document.createElement("div");
+        const slideIMG = document.createElement("div");
+        const slideA = document.createElement("div");
+        slidePADRE.classList.add("slide");
+
+        const img = document.createElement("img");
+        img.src = item.img;
+        img.alt = item.text;
+        img.draggable = false;
+
+        const link = document.createElement("a");
+        link.href = item.link;
+        link.textContent = item.text;
+
+        slideIMG.appendChild(img);
+        slideA.appendChild(link);
+        slidePADRE.appendChild(slideIMG);
+        slidePADRE.appendChild(slideA);
+        return slidePADRE;
+    }
+
+    function fillSlider() {
+        slidesData.forEach(item => slider.appendChild(createSlide(item)));
+    }
+
+    fillSlider();
+
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.style.cursor = 'grabbing';
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = container.scrollLeft;
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+    });
+</script>
+
+</body>
+</html>

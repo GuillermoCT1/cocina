@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("../img/fondo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 80px;
+    color: #2c050f;
+    padding: 10px;
+    font-size: 50px;
+}
+
+/* Aquí empieza el menú de navegación */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #9e0505, #fe7ba4);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo a {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Menú de navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #af8621;
+}
+
+/* Iconos de redes sociales y botón de búsqueda */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Estilos para los iconos de redes */
+.social-icon {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #af8621;
+}
+
+/* Botón de búsqueda */
+.search-button {
+    background: none;
+    border: 2px solid #333;
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.search-button:hover {
+    background: #af8621;
+    color: white;
+    border-color: #af8621;
+}
+
+/* Aquí empieza el css del Main */
+.contenedor {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    gap: 5%;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: rgb(255, 255, 255, 0.7);
+    backdrop-filter: blur(3px);
+    padding: 20px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 10px;
+    align-self: flex-start;
+    height: fit-content;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Caja individual dentro del sidebar */
+.sidebar-box {
+    border: 5px double #847c77;
+    background-color: white;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    padding-top: 0;
+}
+
+.sidebar-box div a {
+    margin-bottom: 100px;
+    font-size: 1.3rem;
+}
+
+.sidebar-title {
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    border-bottom: 5px double #847c77;
+    background: linear-gradient(to right, rgba(56, 5, 5, 0.9), rgb(142, 9, 67, 0.9));
+    color: white;
+}
+
+.sidebar-box ul li {
+    margin-left: 40px;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.sidebar-box p {
+    text-align: justify;
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.sidebar-box-diva {
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+/* Aquí empieza el CSS de las recetas */
+.contenido {
+    width: 80%;
+    background-color: rgb(255, 255, 255, 0.7);
+    backdrop-filter: blur(3px);
+    text-align: center;
+    padding: 20px 0px;
+}
+
+
+
+.recetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60%, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.receta {
+    background: white;
+    height: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.receta img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.receta h3 {
+    margin: 1rem;
+    font-size: 2rem;
+    text-align: justify;
+}
+
+.receta p {
+    text-align: justify;
+    margin: 0 1rem 1rem;
+    color: #555;
+    font-size: 1.5rem;
+}
+
+.receta div {
+    margin: 0 35% ;
+    margin-bottom: 10px;
+    background: rgb(105, 3, 3);
+    border-radius: 3px;
+    text-align: center;
+}
+
+.receta div a {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+.receta div:hover {
+    background-color: #c80d6a;
+}
+
+
+.receta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 -8px -15px rgba(255, 255, 255, 0.2); */
+}
+
+/* Animaciones al desplazarse */
+.receta {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botón para subir */
+#boton-subir {
+    text-align: center;
+    padding: 10px;
+}
+
+#boton-subir button {
+    background-color: #847c77;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#boton-subir button:hover {
+    background-color: #af8621;
+}

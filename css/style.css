@@ -1,0 +1,260 @@
+  body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Encabezado */
+        header {
+            background: #ff6347;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            margin-top: 0.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffe4b5;
+        }
+         nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffe4b5;
+        }
+
+        nav ul li:hover .submenu {
+            display: block;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .submenu li {
+            padding: 0.5rem 1rem;
+            white-space: nowrap;
+        }
+
+        .submenu li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .submenu li a:hover {
+            color: white;
+        }
+
+        /* Sección principal */
+        .recetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            background: #f8f8f8;
+        }
+
+        .receta {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .receta img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .receta h2 {
+            margin: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .receta p {
+            margin: 0 1rem 1rem;
+            color: #555;
+        }
+
+        .receta:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animaciones al desplazarse */
+        .receta {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Pie de página */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer a {
+            color: #ff6347;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+ 
+ .contacto {
+            background: #fff;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contacto h2 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .contacto label {
+            display: block;
+            margin: 0.5rem 0 0.2rem;
+            font-weight: bold;
+        }
+
+        .contacto input, .contacto textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contacto button {
+            display: block;
+            width: 100%;
+            padding: 0.7rem;
+            background: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contacto button:hover {
+            background: #e5533d;
+        }
+        .menu-recetas {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-recetas::-webkit-scrollbar {
+            display: none;
+        }
+
+        .menu-recetas .mini-receta {
+            display: inline-block;
+            margin: 0 0.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-recetas .mini-receta img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-recetas .mini-receta p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .menu-recetas:hover {
+            cursor: pointer;
+        }
+
+        .menu-recetas:hover .mini-receta {
+            transform: translateX(5px);
+        }
+    li a:hover {
+      background-color: orange; /* Color de fondo al pasar el ratón */
+      color: white; /* Cambiar el color del texto */
+      padding:10px;
+      border-radius: 10px;
+    }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La cocina de Diego y Guille</title>
+    <link rel="stylesheet" href="../css/recetas.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar"><!-- Menú de navegación -->
+            <div class="logo">
+                <a href="#">La cocina de Diego y Guille</a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="menuTodas.html">Recetas</a></li>
+                <li><a href="../contacto.html">Contacto</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+
+    <div>
+        <h1 class="titulo">Lasagna</h1>
+    </div>
+
+    <main class="contenedor"> <!-- Recetas -->
+        <section class="sidebar">
+            <div class="sidebar-box">
+                <div class="sidebar-title">Sobre Nosotros</div>
+                <p>Somos dos programadores con una gran afición por la cocina.
+                    ¿Buscáis comida? pues escuchad nuestra rima: <br><br>
+                    Para impresionar a tus invitados en el salón<br>
+                    Para que aprendas a cocinar como un dios<br>
+                    Para comer sano y ponerse cañón<br>
+                    Para usar la sartén como el mejor<br><br>
+                    Guille... Y Diego...<br><br>
+                    ¡Deja atrás la dieta del cucurucho y aprende verdaderos trucos!
+                </p>
+            </div>
+
+            <div class="sidebar-box">
+                <div class="sidebar-title">Todas las recetas</div>
+                <div class="sidebar-box-diva">
+                    <a href="../menus/menuArroces.html">Arroces</a><br>
+                    <a href="../menus/menuCarnes.html">Carnes</a><br>
+                    <a href="../menus/menuPescados.html">Pescados</a><br>
+                    <a href="../menus/menuDulces.html">Dulces</a><br>
+                    <a href="../menus/menuCroquetas.html">Croquetas</a><br>
+                    <a href="../menus/menuMariscos.html">Mariscos</a><br>
+                    <a href="../menus/menuCocidos.html">Cocidos</a><br>
+                    <a href="../menus/menuEntrantes.html">Entrantes</a><br>
+                    <a href="../menus/menuPastas.html">Pastas</a><br>
+                    <a href="../menus/menuSalsas.html">Salsas</a><br>
+                    <a href="../menus/menuCremas.html">Cremas</a><br>
+                </div>
+
+            </div>
+            <div class="sidebar-box" id="boton-subir">
+                <button onclick="scrollToTop()">▲ Subir al principio</button>
+            </div>
+        </section>
+
+        <section class="contenido"> <!-- Menú para las recetas -->
+            <h2>Veamos cómo hacerlo paso a paso</h2>
+            <div class="receta">
+                <div class="imagen-receta">
+                    <img src="../img/lasagna1.jpg" alt="Receta 1">
+                </div>
+                <h1 class="titulo">Lasaña de Carne</h1>
+                <h3>Paso 1: Ingredientes</h3>
+                <ul>
+                    <li>12 placas de lasaña</li>
+                    <li>500g de carne picada (ternera o mezcla)</li>
+                    <li>1 cebolla</li>
+                    <li>2 dientes de ajo</li>
+                    <li>400g de tomate triturado</li>
+                    <li>200ml de bechamel</li>
+                    <li>100g de queso rallado</li>
+                    <li>Aceite de oliva virgen extra</li>
+                    <li>Sal y pimienta al gusto</li>
+                    <li>Orégano seco</li>
+                </ul>
+                <h3>Paso 2: Preparación del Relleno</h3>
+                <p>En una sartén con un poco de aceite, sofreímos la cebolla y los ajos picados hasta que estén dorados.</p>
+                <p>Añadimos la carne picada, salpimentamos y cocinamos hasta que esté bien dorada.</p>
+                <p>Incorporamos el tomate triturado y el orégano. Cocinamos a fuego medio durante 15 minutos.</p>
+                <h3>Paso 3: Montaje y Horneado</h3>
+                <p>Precalentamos el horno a 180°C.</p>
+                <p>Cocemos las placas de lasaña según las instrucciones del paquete.</p>
+                <p>En una fuente, alternamos capas de pasta, carne y bechamel, repitiendo hasta acabar los ingredientes.</p>
+                <p>Cubrimos con queso rallado y horneamos durante 25 minutos hasta que la superficie esté dorada.</p>
+                <p>Dejamos reposar unos minutos antes de servir.</p>
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <script src="../js/menus.js"></script>
+
+</body>
+
+</html>
